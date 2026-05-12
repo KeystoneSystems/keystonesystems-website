@@ -7,17 +7,19 @@ export const SITE = {
   linkedin: "https://linkedin.com/company/keystone-systems-nz",
 } as const;
 
-export const BOOKING_URL = "#book"; // Replace with Cal.com/Calendly embed URL in Phase 2
+// ── Replace with your Cal.com username once account is set up ──
+// e.g. "will-keystone/discovery" or "keystonesystems/30min"
+export const CAL_LINK = "keystonesystems/discovery";
 
 export const NAV_LINKS = [
   { label: "How It Works", href: "#how-it-works" },
   { label: "Services", href: "#services" },
-  { label: "Why Keystone", href: "#why-keystone" },
+  { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
 ] as const;
 
 export const TRUST_SIGNALS = [
-  "NZ-owned",
+  "NZ-owned & operated",
   "Fixed-fee projects",
   "You own what we build",
   "PMP-qualified delivery",
@@ -54,7 +56,7 @@ export const PROCESS_STEPS = [
     step: 2,
     title: "Systems Audit",
     description:
-      "We document your tools, workflows, and manual touchpoints. You receive a written audit report regardless of whether we proceed.",
+      "We document your tools, workflows, and manual touchpoints. You get a written audit report regardless of whether we proceed.",
     duration: "1–2 weeks",
   },
   {
@@ -68,7 +70,7 @@ export const PROCESS_STEPS = [
     step: 4,
     title: "Handover",
     description:
-      "You own everything. Full documentation, training, and access. Optional retainer for ongoing iteration.",
+      "You own everything. Full documentation, training, and ongoing access. Optional retainer for iteration.",
     duration: "Clean close",
   },
 ] as const;
@@ -139,17 +141,17 @@ export const DIFFERENTIATORS = [
 ] as const;
 
 export const OUTCOMES = [
-  { value: "4–8", unit: "hours", label: "saved per week", context: "typical admin reduction in first month" },
-  { value: "2–6", unit: "weeks", label: "to go-live", context: "from scoped brief to live system" },
-  { value: "100%", unit: "", label: "handover rate", context: "every engagement fully documented" },
+  { value: 8, suffix: "hrs", label: "saved per week", context: "typical first-month admin reduction" },
+  { value: 6, suffix: "wks", label: "to go-live", context: "from scoped brief to live system" },
+  { value: 100, suffix: "%", label: "handover rate", context: "every engagement fully documented" },
 ] as const;
 
 export const PRICING_TIERS = [
   {
     name: "Discovery Audit",
     price: "Free",
-    priceNote: "currently",
-    description: "We map your current tools, workflows, and manual processes. You leave with a written audit report.",
+    priceNote: "while we build our portfolio",
+    description: "We map your current tools, workflows, and manual processes. You leave with a written audit — no obligation.",
     includes: [
       "30-min discovery call",
       "Written systems audit",
@@ -162,14 +164,14 @@ export const PRICING_TIERS = [
   {
     name: "Foundation Build",
     price: "From $3,000",
-    priceNote: "NZD fixed fee",
-    description: "Core workflow automation or CRM setup. Defined scope, fixed price, full handover.",
+    priceNote: "NZD · fixed fee",
+    description: "Core workflow automation or CRM setup. Defined scope, fixed price, full documentation and handover.",
     includes: [
       "Everything in Discovery",
       "Scoped automation build",
       "Full documentation",
-      "Training & handover",
-      "30-day support window",
+      "Training & handover session",
+      "30-day post-launch support",
     ],
     cta: "Book a Discovery Call",
     highlight: true,
@@ -178,12 +180,12 @@ export const PRICING_TIERS = [
     name: "Ongoing Retainer",
     price: "From $500",
     priceNote: "NZD/month",
-    description: "Continued iteration, maintenance, and expansion of your automation stack.",
+    description: "Continued iteration, maintenance, and expansion after your initial build is live.",
     includes: [
       "Monthly hours allocation",
-      "Priority support",
-      "Iteration & expansion",
-      "Performance reviews",
+      "Priority response",
+      "Iteration & new automations",
+      "Quarterly performance review",
     ],
     cta: "Talk to Us",
     highlight: false,
@@ -199,7 +201,7 @@ export const FAQS = [
   {
     question: "How long does a typical project take?",
     answer:
-      "From a scoped brief to a live system: 2–6 weeks depending on complexity. The discovery and audit phase (2–3 weeks) comes first, and is fully scoped before any build begins.",
+      "From a scoped brief to a live system: 2–6 weeks depending on complexity. The discovery and audit phase (2–3 weeks) always comes first, and is fully scoped before any build begins.",
   },
   {
     question: "What does it cost?",
@@ -209,7 +211,7 @@ export const FAQS = [
   {
     question: "Who owns what you build?",
     answer:
-      "You do. Every automation, every integration, every document. We don't retain access or set up dependency structures. Full documentation and handover is part of every engagement.",
+      "You do. Every automation, every integration, every document. We don't retain access or set up dependency structures. Full documentation and handover is included in every engagement.",
   },
   {
     question: "What tools do you work with?",
