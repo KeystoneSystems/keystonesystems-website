@@ -72,11 +72,11 @@ export function Navbar() {
           className="flex-shrink-0 opacity-90 hover:opacity-100 transition-opacity"
         >
           <Image
-            src="/logos/Logo_Horizontal.png"
+            src="/logos/Logo_Inverted_Colours.png"
             alt="Keystone Systems"
             width={148}
             height={44}
-            className="h-7 w-auto object-contain brightness-0 invert"
+            className="h-7 w-auto object-contain"
             priority
           />
         </Link>

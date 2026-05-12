@@ -11,7 +11,7 @@ export function Footer() {
           {/* Col 1: Brand */}
           <div className="flex flex-col gap-4">
             <Image
-              src="/logos/Logo_Horizontal.png"
+              src="/logos/Logo_Inverted_Colours.png"
               alt="Keystone Systems"
               width={160}
               height={48}

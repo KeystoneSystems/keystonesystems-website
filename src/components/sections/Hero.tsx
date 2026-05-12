@@ -104,11 +104,11 @@ export function Hero() {
         {/* Logo */}
         <motion.div {...fadeUp(0.6)} className="mt-16 opacity-40">
           <Image
-            src="/logos/Logo_Horizontal.png"
+            src="/logos/Logo_Inverted_Colours.png"
             alt="Keystone Systems"
             width={140}
             height={42}
-            className="h-8 w-auto object-contain brightness-0 invert"
+            className="h-8 w-auto object-contain"
             priority
           />
         </motion.div>
