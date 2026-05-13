@@ -57,11 +57,11 @@ export function InfiniteGrid() {
   };
 
   useAnimationFrame(() => {
-    gridOffsetX.set((gridOffsetX.get() + 0.4) % 64);
-    gridOffsetY.set((gridOffsetY.get() + 0.4) % 64);
+    gridOffsetX.set((gridOffsetX.get() + 0.6) % 64);
+    gridOffsetY.set((gridOffsetY.get() + 0.6) % 64);
   });
 
-  const maskImage = useMotionTemplate`radial-gradient(350px circle at ${mouseX}px ${mouseY}px, black, transparent)`;
+  const maskImage = useMotionTemplate`radial-gradient(500px circle at ${mouseX}px ${mouseY}px, black, transparent)`;
 
   return (
     <div
@@ -69,14 +69,14 @@ export function InfiniteGrid() {
       onMouseMove={handleMouseMove}
       className="absolute inset-0 overflow-hidden"
     >
-      {/* Base grid — always visible, very faint */}
-      <div className="absolute inset-0 opacity-[0.04]">
+      {/* Full grid — always visible across entire hero */}
+      <div className="absolute inset-0 opacity-[0.15]">
         <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} />
       </div>
 
-      {/* Reveal grid — follows cursor */}
+      {/* Mouse spotlight — brighter reveal layer */}
       <motion.div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-50"
         style={{ maskImage, WebkitMaskImage: maskImage }}
       >
         <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} />
