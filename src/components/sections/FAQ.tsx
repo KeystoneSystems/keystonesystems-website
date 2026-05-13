@@ -65,7 +65,7 @@ export function FAQ() {
           >
             <Eyebrow>FAQ</Eyebrow>
             <h2 className="font-heading text-3xl sm:text-4xl font-black text-[#1A1A1B] leading-tight mt-1">
-              Common questions.
+              Questions about business automation.
             </h2>
             <p className="mt-4 text-[#6B6B6C] leading-relaxed text-sm">
               If your question isn&apos;t here, the discovery call is the best place to ask.

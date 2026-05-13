@@ -34,7 +34,7 @@ export function Services() {
             variants={item}
             className="font-heading text-3xl sm:text-4xl font-black text-[#1A1A1B] max-w-xl leading-tight"
           >
-            Five ways we recover your team&apos;s time.
+            AI &amp; automation services for NZ businesses.
           </motion.h2>
           <motion.p variants={item} className="mt-4 text-[#6B6B6C] max-w-xl leading-relaxed">
             We don&apos;t sell tools — we design the outcome and build whatever gets you there.

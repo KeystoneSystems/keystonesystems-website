@@ -31,7 +31,7 @@ export function HowItWorks() {
             variants={item}
             className="font-heading text-3xl sm:text-4xl font-black text-white max-w-xl leading-tight"
           >
-            Simple steps. No surprises.
+            How our automation consulting process works.
           </motion.h2>
           <motion.p variants={item} className="mt-4 text-[#C4BDB5] max-w-lg leading-relaxed">
             We don&apos;t start building until we understand the problem. Every engagement

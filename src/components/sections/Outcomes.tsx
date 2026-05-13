@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { useCountUp } from "@/hooks/useCountUp";
 import { Eyebrow } from "@/components/ui/Section";
@@ -23,7 +23,9 @@ function StatCard({
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const { count, start } = useCountUp(value, 1600);
 
-  if (inView) start();
+  useEffect(() => {
+    if (inView) start();
+  }, [inView]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <motion.div
@@ -50,8 +52,7 @@ function StatCard({
 
 export function Outcomes() {
   return (
-    <section className="bg-[#1A1A1B] py-24 relative overflow-hidden">
-      {/* Background accent */}
+    <section id="outcomes" className="bg-[#1A1A1B] py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-[#CD5C36]/3" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#CD5C36]/20 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#CD5C36]/20 to-transparent" />
