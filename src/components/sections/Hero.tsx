@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { InfiniteGrid } from "@/components/ui/InfiniteGrid";
 import { CAL_LINK, TRUST_SIGNALS } from "@/lib/constants";
 
 const fadeUp = (delay: number) => ({
@@ -18,15 +19,8 @@ export function Hero() {
       id="hero"
       className="relative min-h-dvh bg-[#1A1A1B] flex flex-col items-center justify-center overflow-hidden"
     >
-      {/* Subtle grid texture */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#CD5C36 1px, transparent 1px), linear-gradient(90deg, #CD5C36 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
-      />
+      {/* Animated infinite grid with mouse-reveal */}
+      <InfiniteGrid />
 
       {/* Terracotta glow — top right */}
       <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-[#CD5C36] opacity-[0.06] blur-[120px] pointer-events-none" />
