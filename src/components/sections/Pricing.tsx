@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import { Eyebrow } from "@/components/ui/Section";
-import { PRICING_TIERS, CAL_LINK } from "@/lib/constants";
+import { PRICING_TIERS } from "@/lib/constants";
+import { CalPopupButton } from "@/components/ui/CalPopupButton";
 
 const container = {
   hidden: {},
@@ -90,11 +91,8 @@ export function Pricing() {
                   ))}
                 </ul>
 
-                <a
-                  href={`https://cal.com/${CAL_LINK}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group mt-auto inline-flex items-center justify-center gap-2 rounded-xl py-3 px-5 text-sm font-semibold transition-all duration-150 ${
+                <CalPopupButton
+                  className={`group mt-auto inline-flex items-center justify-center gap-2 rounded-xl py-3 px-5 text-sm font-semibold transition-all duration-150 cursor-pointer ${
                     highlight
                       ? "bg-white text-[#CD5C36] hover:bg-[#F7F4F0]"
                       : "bg-white/8 text-white border border-white/15 hover:bg-white/12 hover:border-white/25"
@@ -102,7 +100,7 @@ export function Pricing() {
                 >
                   {cta}
                   <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
-                </a>
+                </CalPopupButton>
               </motion.div>
             ))}
           </div>

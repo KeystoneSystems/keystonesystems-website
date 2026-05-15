@@ -5,7 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
-import { NAV_LINKS, CAL_LINK } from "@/lib/constants";
+import { NAV_LINKS } from "@/lib/constants";
+import { CalPopupButton } from "@/components/ui/CalPopupButton";
 
 const SECTION_IDS = ["hero", "pain-points", "how-it-works", "services", "why-keystone", "pricing", "booking", "faq"];
 
@@ -110,15 +111,10 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <a
-            href={`https://cal.com/${CAL_LINK}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 bg-[#CD5C36] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#A8432A] transition-colors duration-150 shadow-md shadow-[#CD5C36]/20"
-          >
+          <CalPopupButton className="group inline-flex items-center gap-2 bg-[#CD5C36] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#A8432A] transition-colors duration-150 shadow-md shadow-[#CD5C36]/20 cursor-pointer">
             Book a Call
             <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
-          </a>
+          </CalPopupButton>
         </div>
 
         {/* Mobile hamburger */}
@@ -151,16 +147,13 @@ export function Navbar() {
                 {link.label}
               </button>
             ))}
-            <a
-              href={`https://cal.com/${CAL_LINK}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 flex items-center justify-center gap-2 bg-[#CD5C36] text-white text-sm font-semibold px-4 py-3 rounded-xl hover:bg-[#A8432A] transition-colors"
+            <CalPopupButton
+              className="mt-2 flex items-center justify-center gap-2 bg-[#CD5C36] text-white text-sm font-semibold px-4 py-3 rounded-xl hover:bg-[#A8432A] transition-colors cursor-pointer"
               onClick={() => setMenuOpen(false)}
             >
               Book a Free Discovery Call
               <ArrowRight size={14} />
-            </a>
+            </CalPopupButton>
           </motion.div>
         )}
       </AnimatePresence>

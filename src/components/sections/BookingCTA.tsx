@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, Shield, MapPin } from "lucide-react";
-import { CAL_LINK } from "@/lib/constants";
+import { CalPopupButton } from "@/components/ui/CalPopupButton";
 
 export function BookingCTA() {
   return (
@@ -54,15 +54,10 @@ export function BookingCTA() {
             variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
             className="mt-10"
           >
-            <a
-              href={`https://cal.com/${CAL_LINK}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 bg-[#1A1A1B] text-white rounded-xl px-8 py-4 text-base font-semibold hover:bg-[#1A1A1B]/90 transition-all duration-150 shadow-xl shadow-black/20"
-            >
+            <CalPopupButton className="group inline-flex items-center gap-3 bg-[#1A1A1B] text-white rounded-xl px-8 py-4 text-base font-semibold hover:bg-[#1A1A1B]/90 transition-all duration-150 shadow-xl shadow-black/20 cursor-pointer">
               Book a Free Discovery Call
               <ArrowRight size={18} className="group-hover:translate-x-0.5 transition-transform" />
-            </a>
+            </CalPopupButton>
           </motion.div>
 
           {/* Reassurance chips */}

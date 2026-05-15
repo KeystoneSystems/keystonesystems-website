@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { CalPopupButton } from "@/components/ui/CalPopupButton";
 import { InfiniteGrid } from "@/components/ui/InfiniteGrid";
-import { CAL_LINK, TRUST_SIGNALS } from "@/lib/constants";
+import { TRUST_SIGNALS } from "@/lib/constants";
 
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 24 },
@@ -61,17 +62,10 @@ export function Hero() {
           {...fadeUp(0.36)}
           className="mt-10 flex flex-col sm:flex-row items-center gap-4"
         >
-          <Button
-            href={`https://cal.com/${CAL_LINK}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="primary"
-            size="lg"
-            className="group w-full sm:w-auto shadow-lg shadow-[#CD5C36]/20 hover:shadow-[#CD5C36]/40 transition-all"
-          >
+          <CalPopupButton className="group inline-flex items-center justify-center gap-2 transition-all duration-150 cursor-pointer bg-[#CD5C36] text-white font-semibold hover:bg-[#A8432A] px-8 py-4 text-base rounded-lg w-full sm:w-auto shadow-lg shadow-[#CD5C36]/20 hover:shadow-[#CD5C36]/40">
             Book a Free Discovery Call
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
-          </Button>
+          </CalPopupButton>
           <Button href="#how-it-works" variant="secondary" size="lg" className="w-full sm:w-auto">
             See How It Works
           </Button>
