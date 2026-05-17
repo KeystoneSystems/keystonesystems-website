@@ -87,13 +87,19 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div className="mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-xs text-[#6B6B6C]">
             © {new Date().getFullYear()} Keystone Systems Limited · New Zealand
           </p>
-          <p className="text-xs text-[#6B6B6C]">
-            AI & Automation Consulting for NZ Small Business
-          </p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy-policy" className="text-xs text-[#6B6B6C] hover:text-[#C4BDB5] transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-[#3A3A3B]">·</span>
+            <Link href="/terms-of-service" className="text-xs text-[#6B6B6C] hover:text-[#C4BDB5] transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
