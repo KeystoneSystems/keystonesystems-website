@@ -4,7 +4,7 @@ export const SITE = {
   email: "info@keystonesystems.co.nz",
   phone: "+64 21 214 3368",
   url: "https://keystonesystems.co.nz",
-  linkedin: "https://linkedin.com/company/keystone-systems-nz",
+  linkedin: "https://www.linkedin.com/company/keystonesystems-nz/",
 } as const;
 
 // ── Replace with your Cal.com username once account is set up ──
