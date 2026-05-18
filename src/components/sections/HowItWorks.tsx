@@ -69,7 +69,7 @@ export function HowItWorks() {
 
                     {i < 3 && (
                       <div className="flex-shrink-0 w-8 flex items-center justify-center">
-                        <ChevronRight className="w-4 h-4 text-[#CD5C36]/30" strokeWidth={1.5} />
+                        <ChevronRight className="w-5 h-5 text-[#CD5C36]/50" strokeWidth={1.5} />
                       </div>
                     )}
                   </Fragment>
@@ -77,49 +77,47 @@ export function HowItWorks() {
               </div>
 
               {/* Return loop — step 4 back to step 2 */}
-              <div className="relative mt-0" style={{ height: "52px" }}>
+              <div className="relative mt-2 overflow-visible" style={{ height: "60px" }}>
                 {/*
-                  With 4 flex cards + 3 chevron gaps (each w-8 = 32px):
-                  - Approx step 2 centre ≈ 37% of container width
-                  - Approx step 4 centre ≈ 88% of container width
-                  Axis-aligned path + vectorEffect keep lines crisp at any width.
+                  Pure CSS half-ellipse arc. border-radius: 0 0 100% 100% on a div that spans
+                  from step-2 centre (≈37%) to step-4 centre (≈88%) draws a smooth curved arc
+                  with no SVG distortion. The pill label sits at the bottom of the curve.
                 */}
-                <svg
-                  className="absolute inset-0 w-full h-full overflow-visible"
-                  viewBox="0 0 100 52"
-                  preserveAspectRatio="none"
-                >
-                  <path
-                    d="M 88 2 L 88 42 L 37 42 L 37 2"
-                    fill="none"
-                    stroke="#CD5C36"
-                    strokeOpacity="0.28"
-                    strokeWidth="1"
-                    vectorEffect="non-scaling-stroke"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-
-                {/* Arrowhead pointing up into step 2 */}
                 <div
-                  className="absolute"
+                  className="absolute border-b border-l border-r border-[#CD5C36]/35"
                   style={{
-                    top: "-3px",
-                    left: "calc(37% - 3px)",
-                    width: 0,
-                    height: 0,
-                    borderLeft: "3px solid transparent",
-                    borderRight: "3px solid transparent",
-                    borderBottom: "5px solid rgba(205,92,54,0.32)",
+                    left: "37%",
+                    right: "12%",
+                    top: 0,
+                    bottom: 0,
+                    borderRadius: "0 0 100% 100%",
                   }}
                 />
 
+                {/* Arrowhead pointing up at step 2 */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "-4px",
+                    left: "calc(37% - 4px)",
+                    width: 0,
+                    height: 0,
+                    borderLeft: "4px solid transparent",
+                    borderRight: "4px solid transparent",
+                    borderBottom: "7px solid rgba(205,92,54,0.45)",
+                  }}
+                />
+
+                {/* Pill label sitting at the base of the arc */}
                 <span
-                  className="absolute text-[9px] font-bold tracking-[0.2em] uppercase text-[#CD5C36]/38 whitespace-nowrap"
-                  style={{ left: "62.5%", transform: "translateX(-50%)", bottom: "5px" }}
+                  className="absolute bg-[#1A1A1B] border border-[#CD5C36]/30 rounded-full px-3 py-1 text-[9px] font-bold tracking-[0.15em] uppercase text-[#CD5C36]/65 whitespace-nowrap z-10"
+                  style={{
+                    left: "62.5%",
+                    transform: "translate(-50%, 50%)",
+                    bottom: 0,
+                  }}
                 >
-                  Back to Audit
+                  ↻ Back to Audit
                 </span>
               </div>
             </div>
