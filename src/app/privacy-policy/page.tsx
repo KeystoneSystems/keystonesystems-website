@@ -85,6 +85,12 @@ const sections = [
             <strong>Vercel</strong> — our website is hosted on Vercel. Server logs may include IP addresses and request metadata. See{" "}
             <a href="https://vercel.com/legal/privacy-policy" className="text-[#CD5C36] hover:underline" target="_blank" rel="noopener noreferrer">Vercel&rsquo;s Privacy Policy</a>.
           </li>
+          <li>
+            <strong>AI and automation platforms</strong> — Where we deliver AI or automation services to clients, work may involve data being processed through commercial APIs including Anthropic (Claude) and OpenAI. Under their commercial API agreements, client data is not used to train AI models. Data is processed on their secure infrastructure and is subject to their respective privacy policies: see{" "}
+            <a href="https://www.anthropic.com/legal/privacy" className="text-[#CD5C36] hover:underline" target="_blank" rel="noopener noreferrer">Anthropic&rsquo;s Privacy Policy</a>
+            {" "}and{" "}
+            <a href="https://openai.com/policies/privacy-policy" className="text-[#CD5C36] hover:underline" target="_blank" rel="noopener noreferrer">OpenAI&rsquo;s Privacy Policy</a>.
+          </li>
         </ul>
         <p className="mt-3">
           We do not sell, rent, or share your personal information with any other third parties for their own marketing purposes.
@@ -178,7 +184,7 @@ export default function PrivacyPolicyPage() {
     <LegalLayout
       title="Privacy Policy"
       subtitle="Keystone Systems Limited — how we handle your personal information."
-      effectiveDate="17 May 2025"
+      effectiveDate="19 May 2026"
       sections={sections}
     />
   );
