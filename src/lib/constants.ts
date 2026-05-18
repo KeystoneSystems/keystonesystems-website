@@ -51,7 +51,6 @@ export const PROCESS_STEPS = [
     description:
       "30 minutes. We map your current operations and identify the biggest automation opportunities. No pitch deck.",
     duration: "30 min",
-    badge: "one-time" as const,
   },
   {
     step: 2,
@@ -59,7 +58,6 @@ export const PROCESS_STEPS = [
     description:
       "We document your tools, workflows, and manual touchpoints. You get a written audit report regardless of whether we proceed.",
     duration: "1–2 weeks",
-    badge: "repeating" as const,
   },
   {
     step: 3,
@@ -67,7 +65,6 @@ export const PROCESS_STEPS = [
     description:
       "We implement the agreed automations with a defined scope and fixed fee. Documented as we go.",
     duration: "2–6 weeks",
-    badge: undefined,
   },
   {
     step: 4,
@@ -75,7 +72,6 @@ export const PROCESS_STEPS = [
     description:
       "You own everything. Full documentation, training, and ongoing access. Retainer clients loop back to the audit — we find the next opportunity together.",
     duration: "Clean close",
-    badge: undefined,
   },
 ] as const;
 

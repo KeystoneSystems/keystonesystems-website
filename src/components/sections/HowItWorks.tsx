@@ -40,29 +40,19 @@ export function HowItWorks() {
           </motion.p>
 
           {/* Steps */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 relative">
-            {/* Forward connector line — desktop only */}
-            <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[#CD5C36]/30 to-transparent" />
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+            {/* Solid connector line through step number centres — desktop only */}
+            <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-[#CD5C36]/40" />
 
-            {PROCESS_STEPS.map(({ step, title, description, duration, badge }) => (
-              <motion.div key={step} variants={item} className="relative flex flex-col gap-4">
-                {/* Step number + badge */}
-                <div className="flex flex-col items-start gap-1.5">
-                  <div className="w-14 h-14 rounded-2xl bg-[#CD5C36]/10 border border-[#CD5C36]/20 flex items-center justify-center">
-                    <span className="font-heading text-xl font-black text-[#CD5C36]">
-                      {step}
-                    </span>
-                  </div>
-                  {badge === "one-time" && (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold tracking-widest uppercase bg-white/5 border border-white/10 text-white/30">
-                      One-time
-                    </span>
-                  )}
-                  {badge === "repeating" && (
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold tracking-widest uppercase bg-[#CD5C36]/10 border border-[#CD5C36]/30 text-[#CD5C36]/70">
-                      ↻ Repeating
-                    </span>
-                  )}
+            {PROCESS_STEPS.map(({ step, title, description, duration }) => (
+              <motion.div
+                key={step}
+                variants={item}
+                className="relative bg-white/[0.05] border border-[#CD5C36]/20 rounded-2xl p-5 flex flex-col gap-4"
+              >
+                {/* Step number */}
+                <div className="w-14 h-14 rounded-2xl bg-[#CD5C36]/10 border border-[#CD5C36]/25 flex items-center justify-center">
+                  <span className="font-heading text-xl font-black text-[#CD5C36]">{step}</span>
                 </div>
 
                 {/* Duration pill */}
@@ -78,58 +68,52 @@ export function HowItWorks() {
             ))}
           </div>
 
-          {/* Return arc — desktop only */}
-          <motion.div variants={item} className="hidden md:block mt-1">
+          {/* Return loop: step 4 → step 2 — desktop only */}
+          <motion.div variants={item} className="hidden md:block mt-0 relative" style={{ height: "60px" }}>
+            {/*
+              Axis-aligned U-path from step 4 (87.5%) down, across, and up to step 2 (37.5%).
+              vectorEffect="non-scaling-stroke" keeps the stroke 1.5px on screen even though
+              preserveAspectRatio="none" stretches the coordinate system non-uniformly.
+              Axis-aligned lines don't distort visually — no curves, no diagonals.
+            */}
             <svg
-              viewBox="0 0 1000 68"
+              className="absolute inset-0 w-full h-full overflow-visible"
+              viewBox="0 0 100 60"
               preserveAspectRatio="none"
-              className="w-full"
-              height="68"
             >
-              <defs>
-                <marker
-                  id="loop-arrow"
-                  markerWidth="8"
-                  markerHeight="8"
-                  refX="2"
-                  refY="4"
-                  orient="auto"
-                  markerUnits="strokeWidth"
-                >
-                  <path
-                    d="M 7 0 L 0 4 L 7 8"
-                    fill="none"
-                    stroke="#CD5C36"
-                    strokeOpacity="0.65"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </marker>
-              </defs>
-              {/* Arc from step 4 centre (87.5%) back to step 2 centre (37.5%) */}
               <path
-                d="M 875 10 C 875 58, 375 58, 375 10"
+                d="M 87.5 2 L 87.5 48 L 37.5 48 L 37.5 2"
                 fill="none"
                 stroke="#CD5C36"
-                strokeWidth="1.5"
-                strokeDasharray="8 5"
                 strokeOpacity="0.45"
-                markerEnd="url(#loop-arrow)"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                vectorEffect="non-scaling-stroke"
               />
-              <text
-                x="625"
-                y="64"
-                textAnchor="middle"
-                fill="#CD5C36"
-                fontSize="9"
-                letterSpacing="3"
-                opacity="0.55"
-                fontWeight="700"
-              >
-                BACK TO AUDIT
-              </text>
             </svg>
+
+            {/* Arrowhead pointing up into step 2 — CSS triangle avoids SVG marker distortion */}
+            <div
+              className="absolute opacity-50"
+              style={{
+                top: "-3px",
+                left: "calc(37.5% - 4px)",
+                width: 0,
+                height: 0,
+                borderLeft: "4px solid transparent",
+                borderRight: "4px solid transparent",
+                borderBottom: "7px solid #CD5C36",
+              }}
+            />
+
+            {/* Label centred between step 2 and step 4 */}
+            <span
+              className="absolute text-[9px] font-bold tracking-[0.18em] uppercase text-[#CD5C36] whitespace-nowrap opacity-50"
+              style={{ left: "62.5%", transform: "translateX(-50%)", bottom: "6px" }}
+            >
+              Back to Audit
+            </span>
           </motion.div>
         </motion.div>
       </div>
