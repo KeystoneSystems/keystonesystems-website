@@ -86,7 +86,7 @@ export function HowItWorks() {
                 <div
                   className="absolute border-b border-l border-r border-[#CD5C36]/35"
                   style={{
-                    left: "37%",
+                    left: "62.5%",
                     right: "12%",
                     top: 0,
                     bottom: 0,
@@ -94,12 +94,12 @@ export function HowItWorks() {
                   }}
                 />
 
-                {/* Arrowhead pointing up at step 2 */}
+                {/* Arrowhead pointing up at step 3 */}
                 <div
                   className="absolute"
                   style={{
                     top: "-4px",
-                    left: "calc(37% - 4px)",
+                    left: "calc(62.5% - 4px)",
                     width: 0,
                     height: 0,
                     borderLeft: "4px solid transparent",
@@ -112,12 +112,12 @@ export function HowItWorks() {
                 <span
                   className="absolute bg-[#1A1A1B] border border-[#CD5C36]/30 rounded-full px-3 py-1 text-[9px] font-bold tracking-[0.15em] uppercase text-[#CD5C36]/65 whitespace-nowrap z-10"
                   style={{
-                    left: "62.5%",
+                    left: "75%",
                     transform: "translate(-50%, 50%)",
                     bottom: 0,
                   }}
                 >
-                  ↻ Back to Audit
+                  ↻ Back to Build
                 </span>
               </div>
             </div>
