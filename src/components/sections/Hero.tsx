@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { CalPopupButton } from "@/components/ui/CalPopupButton";
 import { InfiniteGrid } from "@/components/ui/InfiniteGrid";
@@ -89,17 +88,6 @@ export function Hero() {
           ))}
         </motion.div>
 
-        {/* Logo */}
-        <motion.div {...fadeUp(0.6)} className="mt-16 opacity-40">
-          <Image
-            src="/logos/Logo_Inverted_Colours.png"
-            alt="Keystone Systems"
-            width={140}
-            height={42}
-            className="h-8 w-auto object-contain"
-            priority
-          />
-        </motion.div>
       </div>
 
       {/* Scroll indicator */}
